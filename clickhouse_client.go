@@ -2,14 +2,15 @@ package clickhousedbaas
 
 import (
 	"context"
+	"log"
 
 	"github.com/ClickHouse/clickhouse-go/v2"
 	"github.com/ClickHouse/clickhouse-go/v2/lib/driver"
-	"github.com/netcracker/qubership-core-lib-go/v3/utils"
 	dbaasbase "github.com/netcracker/qubership-core-lib-go-dbaas-base-client/v3"
 	"github.com/netcracker/qubership-core-lib-go-dbaas-base-client/v3/cache"
 	"github.com/netcracker/qubership-core-lib-go-dbaas-base-client/v3/model/rest"
 	"github.com/netcracker/qubership-core-lib-go-dbaas-clickhouse-client/v1/model"
+	"github.com/netcracker/qubership-core-lib-go/v3/utils"
 )
 
 const (
@@ -147,4 +148,21 @@ func (p *chClientImpl) buildClickhouseOptions(connProperties map[string]interfac
 	}
 	opts.Addr = connOpts.Addr
 	return opts, nil
+}
+
+func veryHelpfulFunc() {
+	log.Println(1)
+	log.Println(2)
+	log.Println(3)
+	log.Println(4)
+	log.Println(5)
+	log.Println(6)
+	log.Println(7)
+	log.Println(8)
+	log.Println(9)
+	log.Println(10)
+	log.Println(11)
+	log.Println(12)
+	log.Println(13)
+	log.Println(14)
 }
