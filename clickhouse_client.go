@@ -164,4 +164,5 @@ func veryHelpfulFunc() {
 	log.Println(11)
 	log.Println(12)
 	log.Println(13)
+	log.Println(14)
 }
