@@ -2,6 +2,7 @@ package clickhousedbaas
 
 import (
 	"context"
+	"log"
 
 	dbaasbase "github.com/netcracker/qubership-core-lib-go-dbaas-base-client/v3"
 	"github.com/netcracker/qubership-core-lib-go-dbaas-base-client/v3/cache"
@@ -69,4 +70,10 @@ func toClickhouseConnProperties(connProperties map[string]interface{}) model.Cli
 		Username: connProperties["username"].(string),
 		Password: connProperties["password"].(string),
 	}
+}
+
+func test() {
+	log.Println(1)
+	log.Println(2)
+	log.Println(3)
 }
