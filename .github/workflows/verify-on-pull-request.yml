@@ -1,0 +1,32 @@
+name: Verify on pull requests
+
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.23'
+
+      - name: Build
+        run: go build -v ./...
+
+      - name: Test with coverage
+        run: go test -v ./... -coverprofile coverage.out
+
+      - name: Upload coverage report to SonarCloud
+        uses: SonarSource/sonarcloud-github-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=TaurMorchant_qubership-core-lib-go-dbaas-clickhouse-client-tmp
+            -Dsonar.organization=vladislav-larkin-test-organization
+            -Dsonar.go.coverage.reportPaths=coverage.out

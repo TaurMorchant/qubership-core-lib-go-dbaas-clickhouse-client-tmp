@@ -33,7 +33,6 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
-          -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
-          -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
-          -Dsonar.host.url=${{ vars.SONAR_HOST_URL }}
+          -Dsonar.projectKey=TaurMorchant_qubership-core-lib-go-dbaas-clickhouse-client-tmp
+          -Dsonar.organization=vladislav-larkin-test-organization
           -Dsonar.go.coverage.reportPaths=coverage.out
