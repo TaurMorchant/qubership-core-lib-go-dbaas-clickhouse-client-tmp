@@ -5,11 +5,11 @@ import (
 
 	"github.com/ClickHouse/clickhouse-go/v2"
 	"github.com/ClickHouse/clickhouse-go/v2/lib/driver"
-	"github.com/netcracker/qubership-core-lib-go/v3/utils"
 	dbaasbase "github.com/netcracker/qubership-core-lib-go-dbaas-base-client/v3"
 	"github.com/netcracker/qubership-core-lib-go-dbaas-base-client/v3/cache"
 	"github.com/netcracker/qubership-core-lib-go-dbaas-base-client/v3/model/rest"
 	"github.com/netcracker/qubership-core-lib-go-dbaas-clickhouse-client/v1/model"
+	"github.com/netcracker/qubership-core-lib-go/v3/utils"
 )
 
 const (
@@ -146,5 +146,19 @@ func (p *chClientImpl) buildClickhouseOptions(connProperties map[string]interfac
 		Password: connectionProperties.Password,
 	}
 	opts.Addr = connOpts.Addr
+	newFunc()
 	return opts, nil
+}
+
+func newFunc() {
+	logger.Debug("1")
+	logger.Debug("2")
+	logger.Debug("3")
+	logger.Debug("4")
+	logger.Debug("5")
+	logger.Debug("6")
+	logger.Debug("7")
+	logger.Debug("8")
+	logger.Debug("9")
+	logger.Debug("10")
 }
